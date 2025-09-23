@@ -5,6 +5,8 @@
 // <h3>Herrera</h3>
 // Hacer las configuraciones respectivas para poder ver el componente en pantalla.
 
+import { CSSProperties } from "react";
+
 // export function MyAwesomeApp() {
 //     return (
 //         <>
@@ -18,12 +20,19 @@
 const firstName = 'Jhonnatan';
 const lastName = 'Machuca';
 
-const favoriteGames = ['Elder Ring', 'Smash', 'Metal Gear'];
+const favoriteGames = ['Elden Ring', 'Smash', 'Metal Gear'];
 const isActive = true;
 
 const address = {
     zipCode: '255555040',
     country: 'Chile'
+}
+
+const myStyles: CSSProperties = {
+    backgroundColor: 'red',
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 30
 }
 
 // Version como función de flecha
@@ -44,7 +53,15 @@ export const MyAwesomeApp = () => {
 
             <h1>{isActive ? 'Activo' : 'No Activo'}</h1>
 
-            <p>{JSON.stringify(address)}</p>
+            {/* Se define doble llave para objetos literales */}
+            {/* <p style={{
+                backgroundColor: 'red',
+                borderRadius: 10,
+                padding: 10
+            }}> */}
+            <p style={myStyles}>
+                {JSON.stringify(address)}
+            </p>
 
             <p>{valor}</p>
         </>
