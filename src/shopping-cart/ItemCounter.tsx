@@ -1,16 +1,13 @@
 import { CSSProperties, useState } from "react";
 
-const StyleSection: CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 10,
-    marginTop: 10
-}
+import './ItemCounter.css';
 
-const StyleSpan: CSSProperties = {
-    width: 150
-}
-
+// const StyleSection: CSSProperties = {
+//     display: 'flex',
+//     alignItems: 'center',
+//     gap: 10,
+//     marginTop: 10
+// }
 interface Props {
     name: string;
     quantity?: number;
@@ -27,13 +24,12 @@ export const ItemCounter = ({ name, quantity = 1 }: Props) => {
     const handleSubstract = () => {
 
         if (count === 1) return;
-
         setCount(count - 1);
     }
 
     return (
-        <section style={StyleSection}>
-            <span style={StyleSpan}>{name}</span>
+        <section className="item-row">
+            <span className="item-text" style={{ color: count === 1 ? 'red' : 'black' }}>{name}</span>
             <button onClick={handleAdd}>+1</button>
             <span>{count}</span>
             <button onClick={handleSubstract}>-1</button>
