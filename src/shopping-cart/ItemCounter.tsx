@@ -1,6 +1,7 @@
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 
-import './ItemCounter.css';
+//import './ItemCounter.css';
+import styles from './ItemCounter.module.css';
 
 // const StyleSection: CSSProperties = {
 //     display: 'flex',
@@ -28,10 +29,10 @@ export const ItemCounter = ({ name, quantity = 1 }: Props) => {
     }
 
     return (
-        <section className="item-row">
-            <span className="item-text" style={{ color: count === 1 ? 'red' : 'black' }}>{name}</span>
+        <section className={styles.itemRow}>
+            <span className={styles['item-text']} style={{ color: count === 1 ? 'red' : 'black' }}>{name}</span>
             <button onClick={handleAdd}>+1</button>
-            <span>{count}</span>
+            <span className={styles.bold}>{count}</span>
             <button onClick={handleSubstract}>-1</button>
         </section>
     )
