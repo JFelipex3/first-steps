@@ -47,7 +47,6 @@ describe('ItemCounter', () => {
         fireEvent.click(buttonAdd);
 
         // Verificamos que el span con la cantidad existe y muestra el valor actualizado
-        expect(screen.getByTestId('spanQuantity')).toBeDefined();
         expect(screen.getByTestId('spanQuantity').textContent).toBe(String(quantity + 1));
     });
 
@@ -64,7 +63,6 @@ describe('ItemCounter', () => {
         fireEvent.click(buttonSubstract);
 
         // Verificamos que el span con la cantidad existe y muestra el valor actualizado
-        expect(screen.getByTestId('spanQuantity')).toBeDefined();
         expect(screen.getByTestId('spanQuantity').textContent).toBe(String(quantity - 1));
     });
 
@@ -81,7 +79,30 @@ describe('ItemCounter', () => {
         fireEvent.click(buttonSubstract);
 
         // Verificamos que la cantidad sigue siendo 1 (no baja de 1)
-        expect(screen.getByTestId('spanQuantity')).toBeDefined();
         expect(screen.getByTestId('spanQuantity').textContent).toBe(String(quantity));
+    });
+
+    // Test 6: Verifica que el texto del spam es rojo cuando el quantity se encuentra en 1
+    test('should change to red when count is 1', () => {
+        const name = 'Test item';
+        const quantity = 1;
+        render(<ItemCounter name={name} quantity={quantity} />);
+
+        // Obtenemos el elemento HTML
+        const itemText = screen.getByText(name);
+
+        expect(itemText.style.color).toBe('red');
+    });
+
+    // Test 7: Verifica que el texto del spam es negro cuando el quantity es mayor a 1
+    test('should change to black when count is greater than 1', () => {
+        const name = 'Test item';
+        const quantity = 3;
+        render(<ItemCounter name={name} quantity={quantity} />);
+
+        // Obtenemos el elemento HTML
+        const itemText = screen.getByText(name);
+
+        expect(itemText.style.color).toBe('black');
     });
 });
