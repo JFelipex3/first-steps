@@ -6,7 +6,6 @@
 // Hacer las configuraciones respectivas para poder ver el componente en pantalla.
 
 import { CSSProperties } from "react";
-import { test } from 'vitest';
 
 // export function MyAwesomeApp() {
 //     return (
