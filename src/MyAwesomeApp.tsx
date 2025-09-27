@@ -6,6 +6,7 @@
 // Hacer las configuraciones respectivas para poder ver el componente en pantalla.
 
 import { CSSProperties } from "react";
+import { test } from 'vitest';
 
 // export function MyAwesomeApp() {
 //     return (
@@ -45,7 +46,7 @@ export const MyAwesomeApp = () => {
 
     return (
         <>
-            <h1>{firstName}</h1>
+            <h1 data-testid="first-name-title">{firstName}</h1>
             <h3>{lastName}</h3>
 
             <p>{favoriteGames.join(', ')}</p>
