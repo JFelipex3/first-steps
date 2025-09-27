@@ -33,4 +33,19 @@ describe('MyAwesomeApp', () => {
         expect(h1.innerHTML).toContain('Jhonnatan');
 
     });
+
+    test('should match snapchot (container)', () => {
+
+        // Se usa para evaluar la estructura, si cambiara se daria un error, pero puede ser actualizado el snapshot
+        const { container } = render(<MyAwesomeApp />);
+        expect(container).toMatchSnapshot();
+
+    });
+
+    test('should match snapchot (screen)', () => {
+
+        render(<MyAwesomeApp />);
+        expect(screen.getByTestId('div-app')).toMatchSnapshot();
+
+    });
 });

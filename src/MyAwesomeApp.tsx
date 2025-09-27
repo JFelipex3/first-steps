@@ -45,11 +45,12 @@ export const MyAwesomeApp = () => {
     valor = 'Valor actualizado dentro de la función';
 
     return (
-        <>
+        // los data-testid="div-app" no son recomendados porque pueden ser borados y afectarian al testing
+        <div data-testid="div-app">
             <h1 data-testid="first-name-title">{firstName}</h1>
             <h3>{lastName}</h3>
 
-            <p>{favoriteGames.join(', ')}</p>
+            <p className="mi-clase-favorita">{favoriteGames.join(', ')}</p>
             <p>{2 + 2}</p>
 
             <h1>{isActive ? 'Activo' : 'No Activo'}</h1>
@@ -65,6 +66,6 @@ export const MyAwesomeApp = () => {
             </p>
 
             <p>{valor}</p>
-        </>
+        </div>
     )
 }
