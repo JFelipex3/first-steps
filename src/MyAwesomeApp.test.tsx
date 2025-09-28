@@ -20,7 +20,7 @@ describe('MyAwesomeApp', () => {
 
     test('should render firstname and lastname (screen)', () => {
 
-        render(<MyAwesomeApp />); r
+        render(<MyAwesomeApp />);
 
         // const h1 = screen.getByRole('heading', {
         //     level: 1
