@@ -20,8 +20,7 @@ describe('MyAwesomeApp', () => {
 
     test('should render firstname and lastname (screen)', () => {
 
-        render(<MyAwesomeApp />);
-        screen.debug();
+        render(<MyAwesomeApp />); r
 
         // const h1 = screen.getByRole('heading', {
         //     level: 1
@@ -34,7 +33,7 @@ describe('MyAwesomeApp', () => {
 
     });
 
-    test('should match snapchot (container)', () => {
+    test('should match snapshot (container)', () => {
 
         // Se usa para evaluar la estructura, si cambiara se daria un error, pero puede ser actualizado el snapshot
         const { container } = render(<MyAwesomeApp />);
@@ -42,7 +41,7 @@ describe('MyAwesomeApp', () => {
 
     });
 
-    test('should match snapchot (screen)', () => {
+    test('should match snapshot (screen)', () => {
 
         render(<MyAwesomeApp />);
         expect(screen.getByTestId('div-app')).toMatchSnapshot();

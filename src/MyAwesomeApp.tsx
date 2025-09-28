@@ -44,7 +44,7 @@ export const MyAwesomeApp = () => {
     valor = 'Valor actualizado dentro de la función';
 
     return (
-        // los data-testid="div-app" no son recomendados porque pueden ser borados y afectarian al testing
+        // los data-testid="div-app" no son recomendados porque pueden ser borrados y afectarian al testing
         <div data-testid="div-app">
             <h1 data-testid="first-name-title">{firstName}</h1>
             <h3>{lastName}</h3>
